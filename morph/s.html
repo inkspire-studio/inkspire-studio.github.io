@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A Morph Launcher design</title>
+<meta name="description" content="Someone shared a design made in Morph Launcher. Open it in Morph Launcher on Android.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Inkspire Studio">
+<meta property="og:title" content="A Morph Launcher design">
+<meta property="og:description" content="Open it in Morph Launcher on Android.">
+<meta name="robots" content="noindex">
+<!--
+  The share page. A share link carries its design after the "#", which a browser never sends to a server, so this page
+  is fetched as a plain /morph/s and knows nothing of the design until the script below reads it in the browser. The
+  script only turns it into an "Open in Morph" link and sends it nowhere. Nothing here is generated from the design, so
+  a chat app's link card is the same for every share: the tags above are all it can see.
+-->
+<style>
+  :root {
+    color-scheme: light dark;
+    --bg: #fbfbfa; --fg: #1a1a19; --muted: #5f5f5c; --rule: #e2e2df; --card: #ffffff;
+    --button: #1a1a19; --on-button: #fbfbfa;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #121211; --fg: #ebebe8; --muted: #9a9a95; --rule: #2b2b29; --card: #1a1a19;
+      --button: #ebebe8; --on-button: #121211;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; padding: 0 1.25rem 4rem;
+    background: var(--bg); color: var(--fg);
+    font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  main { max-width: 32rem; margin: 0 auto; padding-top: 4.5rem; }
+  h1 { font-size: 1.7rem; line-height: 1.25; margin: 0 0 .75rem; letter-spacing: -0.02em; }
+  p { margin: 0 0 1rem; }
+  .muted { color: var(--muted); font-size: .95rem; }
+  .actions { display: flex; flex-direction: column; gap: .75rem; margin: 2rem 0; }
+  .button {
+    display: block; text-align: center; text-decoration: none; font-weight: 600;
+    padding: .9rem 1.25rem; border-radius: 999px;
+    background: var(--button); color: var(--on-button);
+  }
+  .button.secondary { background: transparent; color: var(--fg); border: 1px solid var(--rule); }
+  [hidden] { display: none !important; }
+  footer { border-top: 1px solid var(--rule); padding-top: 1.25rem; margin-top: 3rem; }
+  footer a { color: var(--muted); }
+</style>
+</head>
+<body>
+<main>
+  <h1>A Morph Launcher design</h1>
+  <p>Someone shared an icon look, a wallpaper or a widget they made in Morph Launcher. Open it in Morph to see it on
+    your own phone and decide whether to keep it.</p>
+
+  <div class="actions">
+    <a id="open" class="button" hidden>Open in Morph</a>
+    <a id="play" class="button secondary" href="https://play.google.com/store/apps/details?id=inkspire.morph.launcher">
+      Get Morph Launcher on Google Play</a>
+  </div>
+
+  <p id="desktop" class="muted" hidden>Open this link on an Android phone to see the design.</p>
+  <p id="empty" class="muted" hidden>This link has no design in it. It may have been cut short when it was sent: ask
+    for it again, or copy the whole link and use <b>Paste a shared link</b> in Morph's settings.</p>
+  <p class="muted">The design travels inside the link itself. This page never receives it, and nothing about it is sent
+    anywhere.</p>
+
+  <footer>
+    <a href="/">Inkspire Studio</a> ·
+    <a href="/morph-launcher-privacy-policy.html">Privacy policy</a>
+  </footer>
+</main>
+<script>
+  (function () {
+    // Only the base64url alphabet goes into the intent link: that is all a payload is made of, and it keeps anything
+    // else in the fragment from being read as one of the intent's own fields.
+    var payload = location.hash.slice(1);
+    var valid = /^[A-Za-z0-9_-]+$/.test(payload) && payload.length <= 262144;
+    var android = /Android/i.test(navigator.userAgent);
+    if (!valid) {
+      document.getElementById('empty').hidden = false;
+    } else if (!android) {
+      document.getElementById('desktop').hidden = false;
+    } else {
+      // The intent's own fields take the "#", so the payload rides in the query. Morph reads either form. With no
+      // fallback URL, Chrome takes a phone without Morph to its Play page.
+      var open = document.getElementById('open');
+      open.href = 'intent://inkspire-studio.github.io/morph/s?p=' + payload +
+        '#Intent;scheme=https;package=inkspire.morph.launcher;end';
+      open.hidden = false;
+    }
+  })();
+</script>
+</body>
+</html>
