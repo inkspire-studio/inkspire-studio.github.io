@@ -1,1 +1,1 @@
-# kuro-mujou.github.io
+# inkspire.github.io
