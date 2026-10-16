@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "inkspire.morph.launcher",
+      "sha256_cert_fingerprints": [
+        "17:D4:DD:B8:CD:83:F4:A3:CB:9C:8F:B8:73:99:6A:24:BE:32:0B:A4:FD:36:D2:F1:57:AB:06:B7:28:8E:1A:A9"
+      ]
+    }
+  }
+]
