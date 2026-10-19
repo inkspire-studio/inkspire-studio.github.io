@@ -1,6 +1,6 @@
 # Inkspire Studio
 
-Makers of Morph Launcher for Android. This repository is the site at https://inkspire-studio.github.io/.
+Makers of Morph Launcher for Android. This repository is the site at https://inkspire-studio.net/.
 
 - [Morph Launcher](morph/) and its [roadmap](morph/roadmap.html)
 - [Morph Launcher privacy policy](morph/privacy-policy.html)
