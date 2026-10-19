@@ -1,0 +1,230 @@
+/*
+  Morph Launcher's site. Grayscale chrome, as in the app itself: the screenshots carry the color, so nothing around
+  them competes. Light and dark both follow the visitor's system setting.
+
+  The privacy policy page is generated from the app's repository (PrivacyPolicyHtmlTest) with its own copy of the
+  tokens and the header below, so it stands alone. Change a token or the header here and change it there too.
+*/
+
+@font-face {
+  font-family: "Manrope";
+  src: url("fonts/manrope.ttf") format("truetype");
+  font-weight: 200 800;
+  font-display: swap;
+}
+
+:root {
+  color-scheme: light dark;
+  --bg: #fbfbfa;
+  --sunk: #f1f1ef;
+  --fg: #1a1a19;
+  --muted: #5f5f5c;
+  --rule: #e2e2df;
+  --card: #ffffff;
+  --button: #1a1a19;
+  --on-button: #fbfbfa;
+  --bezel: #121211;
+  --shadow: 0 1px 2px rgb(0 0 0 / .06), 0 18px 40px -18px rgb(0 0 0 / .35);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #121211;
+    --sunk: #0b0b0a;
+    --fg: #ebebe8;
+    --muted: #9a9a95;
+    --rule: #2b2b29;
+    --card: #1a1a19;
+    --button: #ebebe8;
+    --on-button: #121211;
+    --bezel: #2b2b29;
+    --shadow: 0 1px 2px rgb(0 0 0 / .4), 0 18px 40px -18px rgb(0 0 0 / .8);
+  }
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font: 16px/1.65 "Manrope", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; }
+a { color: inherit; text-underline-offset: 3px; }
+h1, h2, h3 { line-height: 1.15; letter-spacing: -0.025em; text-wrap: balance; }
+p { text-wrap: pretty; }
+
+.wrap { max-width: 72rem; margin: 0 auto; padding: 0 1.25rem; }
+.narrow { max-width: 44rem; }
+
+/* Header */
+
+.site-header {
+  position: sticky; top: 0; z-index: 10;
+  background: color-mix(in srgb, var(--bg) 86%, transparent);
+  backdrop-filter: saturate(1.4) blur(14px);
+  -webkit-backdrop-filter: saturate(1.4) blur(14px);
+  border-bottom: 1px solid var(--rule);
+}
+.site-header .wrap { display: flex; align-items: center; gap: 1.5rem; height: 4rem; }
+.wordmark { font-weight: 800; font-size: 1.15rem; letter-spacing: -0.03em; text-decoration: none; white-space: nowrap; }
+.wordmark span { color: var(--muted); font-weight: 600; }
+.site-nav { display: flex; gap: 1.25rem; margin-left: auto; align-items: center; }
+.site-nav a { text-decoration: none; color: var(--muted); font-weight: 600; font-size: .95rem; }
+.site-nav a:hover, .site-nav a[aria-current="page"] { color: var(--fg); }
+
+/* Buttons */
+
+.button {
+  display: inline-flex; align-items: center; justify-content: center; gap: .5rem;
+  padding: .8rem 1.4rem; border-radius: 999px;
+  background: var(--button); color: var(--on-button);
+  font-weight: 700; text-decoration: none; white-space: nowrap;
+  border: 1px solid var(--button);
+  transition: transform .15s ease;
+}
+.button:hover { transform: translateY(-1px); }
+.button.secondary { background: transparent; color: var(--fg); border-color: var(--rule); }
+.button.small { padding: .45rem 1rem; font-size: .9rem; }
+.actions { display: flex; flex-wrap: wrap; gap: .75rem; }
+
+/* Devices: a bezel around a raw screenshot, so the pictures stay the app's own and the frame stays the site's. */
+
+.device {
+  background: var(--bezel);
+  padding: 2.2%;
+  border-radius: 9% / 5%;
+  box-shadow: var(--shadow);
+}
+.device img { display: block; width: 100%; height: auto; border-radius: 7.5% / 4.2%; }
+.device.wide { border-radius: 4.5% / 8%; padding: 1.2%; }
+.device.wide img { border-radius: 3.6% / 6.4%; }
+.device.square { border-radius: 6%; padding: 1.8%; }
+.device.square img { border-radius: 4.6%; }
+
+/* Hero */
+
+.hero { padding: 4.5rem 0 5rem; }
+.hero .wrap { display: grid; grid-template-columns: 1.15fr .85fr; gap: 3rem; align-items: center; }
+.eyebrow { font-size: .8rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin: 0 0 1rem; }
+.hero h1 { font-size: clamp(2.6rem, 6vw, 4.4rem); margin: 0 0 1.25rem; font-weight: 800; }
+.lead { font-size: 1.2rem; color: var(--muted); margin: 0 0 2rem; max-width: 34rem; }
+.facts { display: flex; flex-wrap: wrap; gap: .5rem; list-style: none; padding: 0; margin: 2rem 0 0; }
+.facts li {
+  font-size: .85rem; font-weight: 600; color: var(--muted);
+  border: 1px solid var(--rule); border-radius: 999px; padding: .3rem .8rem;
+}
+.hero .device { width: min(100%, 20rem); justify-self: center; }
+
+/* Feature rows */
+
+.section { padding: 5rem 0; border-top: 1px solid var(--rule); }
+.section.sunk { background: var(--sunk); }
+.section-head { max-width: 40rem; margin: 0 0 3rem; }
+.section-head h2 { font-size: clamp(1.9rem, 4vw, 2.8rem); margin: 0 0 1rem; font-weight: 800; }
+.section-head p { color: var(--muted); font-size: 1.1rem; margin: 0; }
+
+.feature { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+.feature + .feature { margin-top: 6rem; }
+.feature.flip .feature-text { order: 2; }
+.feature h3 { font-size: clamp(1.6rem, 3vw, 2.2rem); margin: 0 0 1rem; font-weight: 800; }
+.feature p { color: var(--muted); font-size: 1.08rem; margin: 0 0 1rem; }
+.feature ul { padding-left: 1.2rem; color: var(--muted); margin: 0; }
+.feature li { margin: .3rem 0; }
+.feature li strong { color: var(--fg); }
+
+.phones { display: flex; gap: 1.25rem; justify-content: center; align-items: flex-start; }
+.phones .device { flex: 0 1 15rem; }
+.phones .device:nth-child(2) { margin-top: 3rem; }
+
+.screens { display: grid; grid-template-columns: 1fr; gap: 1.5rem; }
+.screens.fold { grid-template-columns: 2.2fr 1fr; align-items: end; }
+
+/* Small cards */
+
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); gap: 1rem; }
+.card {
+  background: var(--card); border: 1px solid var(--rule); border-radius: 1.1rem;
+  padding: 1.4rem 1.5rem;
+}
+.card h3 { font-size: 1.1rem; margin: 0 0 .4rem; letter-spacing: -0.015em; }
+.card p { margin: 0; color: var(--muted); font-size: .97rem; }
+
+/* Privacy and pricing */
+
+.split { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.panel {
+  background: var(--card); border: 1px solid var(--rule); border-radius: 1.5rem;
+  padding: 2.25rem;
+}
+.panel h2 { font-size: 1.8rem; margin: 0 0 1rem; font-weight: 800; }
+.panel p { color: var(--muted); margin: 0 0 1rem; }
+.panel .button { margin-top: .5rem; }
+
+/* Closing call to action */
+
+.cta { text-align: center; padding: 6rem 0; border-top: 1px solid var(--rule); }
+.cta h2 { font-size: clamp(2rem, 5vw, 3.2rem); margin: 0 0 1rem; font-weight: 800; }
+.cta p { color: var(--muted); font-size: 1.1rem; margin: 0 auto 2rem; max-width: 32rem; }
+.cta .actions { justify-content: center; }
+
+/* Footer */
+
+.site-footer { border-top: 1px solid var(--rule); padding: 2.5rem 0 3.5rem; color: var(--muted); font-size: .92rem; }
+.site-footer .wrap { display: flex; flex-wrap: wrap; gap: 1rem 2rem; justify-content: space-between; }
+.site-footer nav { display: flex; flex-wrap: wrap; gap: 1.25rem; }
+.site-footer a { color: var(--muted); }
+
+/* Roadmap */
+
+.page-head { padding: 4rem 0 2.5rem; }
+.page-head h1 { font-size: clamp(2.4rem, 5vw, 3.6rem); margin: 0 0 1rem; font-weight: 800; }
+.page-head p { color: var(--muted); font-size: 1.15rem; margin: 0; max-width: 40rem; }
+
+.stage { padding: 3rem 0; border-top: 1px solid var(--rule); }
+.stage-head { display: flex; align-items: baseline; gap: 1rem; margin: 0 0 .5rem; }
+.stage-head h2 { font-size: 1.7rem; margin: 0; font-weight: 800; }
+.stage-intro { color: var(--muted); margin: 0 0 1.75rem; max-width: 40rem; }
+.pill {
+  display: inline-block; font-size: .75rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase;
+  border-radius: 999px; padding: .2rem .65rem; border: 1px solid var(--rule); color: var(--muted);
+}
+.pill.solid { background: var(--button); color: var(--on-button); border-color: var(--button); }
+.card .area { font-size: .75rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin: 0 0 .6rem; }
+.done-list { columns: 2 18rem; column-gap: 2.5rem; padding: 0; margin: 0; list-style: none; }
+.done-list li { break-inside: avoid; padding: .7rem 0; border-bottom: 1px solid var(--rule); }
+.done-list strong { display: block; }
+.done-list span { color: var(--muted); font-size: .95rem; }
+
+/* Narrow screens */
+
+@media (max-width: 860px) {
+  .hero { padding: 3rem 0 4rem; }
+  .hero .wrap, .feature, .split { grid-template-columns: 1fr; gap: 2.5rem; }
+  .feature.flip .feature-text { order: 0; }
+  .feature + .feature { margin-top: 4.5rem; }
+  .hero .device { width: min(70%, 18rem); }
+  .section { padding: 4rem 0; }
+  .panel { padding: 1.75rem; }
+}
+
+@media (max-width: 560px) {
+  .site-header .wrap { gap: .75rem; }
+  .site-nav { gap: .9rem; }
+  .site-nav .button { display: none; }
+  .wordmark span { display: none; }
+  .phones { gap: .75rem; }
+  .phones .device:nth-child(2) { margin-top: 1.5rem; }
+  .screens.fold { grid-template-columns: 1fr; }
+  .screens.fold .device:last-child { width: 55%; justify-self: center; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .button { transition: none; }
+}

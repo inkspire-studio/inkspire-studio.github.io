@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Morph Launcher — Privacy Policy</title>
+<link rel="canonical" href="https://inkspire-studio.github.io/morph/privacy-policy.html">
+<style>
+  @font-face {
+    font-family: "Manrope"; src: url("fonts/manrope.ttf") format("truetype");
+    font-weight: 200 800; font-display: swap;
+  }
+  :root {
+    color-scheme: light dark;
+    --bg: #fbfbfa; --fg: #1a1a19; --muted: #5f5f5c; --rule: #e2e2df; --card: #ffffff;
+    --button: #1a1a19; --on-button: #fbfbfa;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #121211; --fg: #ebebe8; --muted: #9a9a95; --rule: #2b2b29; --card: #1a1a19;
+      --button: #ebebe8; --on-button: #121211;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; padding: 0 0 5rem;
+    background: var(--bg); color: var(--fg);
+    font: 16px/1.65 "Manrope", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  .site-header {
+    position: sticky; top: 0; z-index: 10;
+    background: color-mix(in srgb, var(--bg) 86%, transparent);
+    backdrop-filter: saturate(1.4) blur(14px); -webkit-backdrop-filter: saturate(1.4) blur(14px);
+    border-bottom: 1px solid var(--rule);
+  }
+  .site-header .wrap {
+    display: flex; align-items: center; gap: 1.5rem; height: 4rem;
+    max-width: 72rem; margin: 0 auto; padding: 0 1.25rem;
+  }
+  .wordmark { font-weight: 800; font-size: 1.15rem; letter-spacing: -0.03em; text-decoration: none; white-space: nowrap; }
+  .wordmark span { color: var(--muted); font-weight: 600; }
+  .site-nav { display: flex; gap: 1.25rem; margin-left: auto; align-items: center; }
+  .site-nav a { text-decoration: none; color: var(--muted); font-weight: 600; font-size: .95rem; }
+  .site-nav a:hover, .site-nav a[aria-current="page"] { color: var(--fg); }
+  .site-nav .button {
+    padding: .45rem 1rem; border-radius: 999px; font-size: .9rem; font-weight: 700;
+    background: var(--button); color: var(--on-button);
+  }
+  @media (max-width: 560px) {
+    .site-header .wrap { gap: .75rem; }
+    .site-nav { gap: .9rem; }
+    .site-nav .button, .wordmark span { display: none; }
+  }
+  main { max-width: 44rem; margin: 0 auto; padding: 0 1.25rem; }
+  main > header { padding: 4rem 0 2rem; border-bottom: 1px solid var(--rule); margin-bottom: 2.5rem; }
+  p, li { overflow-wrap: anywhere; }
+  h1 { font-size: 1.9rem; line-height: 1.2; margin: 0 0 .6rem; letter-spacing: -0.02em; }
+  h2 { font-size: 1.15rem; margin: 2.75rem 0 .75rem; letter-spacing: -0.01em; }
+  h3 { font-size: 1rem; margin: 1.75rem 0 .4rem; }
+  p, li { color: var(--fg); }
+  .meta { color: var(--muted); font-size: .9rem; margin: 0; }
+  .pkg {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: .875em; background: var(--card); border: 1px solid var(--rule);
+    border-radius: 4px; padding: .1em .35em;
+  }
+  .lede {
+    background: var(--card); border: 1px solid var(--rule); border-radius: 12px;
+    padding: 1.25rem 1.4rem; margin: 0 0 1rem;
+  }
+  .lede p { margin: 0; font-size: 1.05rem; }
+  ul { padding-left: 1.25rem; }
+  li { margin: .4rem 0; }
+  a { color: inherit; text-underline-offset: 3px; }
+  footer {
+    margin-top: 3.5rem; padding-top: 1.5rem; border-top: 1px solid var(--rule);
+    color: var(--muted); font-size: .9rem;
+  }
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="wordmark" href="./">Morph <span>Launcher</span></a>
+    <nav class="site-nav" aria-label="Site">
+      <a href="./#features">Features</a>
+      <a href="roadmap.html">Roadmap</a>
+      <a href="privacy-policy.html" aria-current="page">Privacy</a>
+      <a class="button" href="https://play.google.com/store/apps/details?id=inkspire.morph.launcher">Get the app</a>
+    </nav>
+  </div>
+</header>
+<main>
+
+  <header>
+    <h1>Privacy Policy — Morph Launcher</h1>
+    <p class="meta">Package <span class="pkg">inkspire.morph.launcher</span> · Effective 16 October 2026</p>
+  </header>
+
+  <div class="lede">
+    <p>Morph Launcher collects nothing about you. It has no account, no server, no ads, no analytics and no crash reporting. Two things involve another company: Morph Premium, the optional subscription, which Google Play handles; and weather widgets, which ask MET Norway for a forecast.</p>
+  </div>
+  <p>Everything below describes what the app reads on your device, and why. None of it leaves your device, apart from what the Morph Premium and Weather sections describe.</p>
+
+  <h2>What the app accesses on your device</h2>
+
+  <h3>Your installed apps</h3>
+  <p>A launcher's job is to show and start your apps, so it reads the list of apps installed on the device along with their names and icons. This is used to draw your home screen and app list, and to launch what you tap. The list is never recorded off-device.</p>
+
+  <h3>Your layout and settings</h3>
+  <p>Where you put each icon, your folders, your icon designs, your wallpaper choice and every preference you set are stored in the app's own private storage on the device. Uninstalling the app deletes all of it.</p>
+
+  <h3>Images you choose</h3>
+  <p>Pictures you use as a wallpaper, or in an icon or widget, are chosen through Android's photo picker, which gives the app only the picture you select. The app has no permission to read your photo library and does not scan, index or upload it.</p>
+
+  <h3>Capturing your wallpaper</h3>
+  <p>The wallpaper capture feature takes one picture of your screen, with the launcher's own interface hidden, so its effects can match a wallpaper the app cannot otherwise read (such as a live wallpaper). It only starts after you allow it in Android's screen-sharing dialog, it stops as soon as that one picture is taken, and the picture is kept in the app's private storage on the device. It is never saved to your gallery and never leaves the device. Android requires a short-lived foreground service for this (FOREGROUND_SERVICE_MEDIA_PROJECTION).</p>
+
+  <h3>Your calendar (calendar widgets)</h3>
+  <p>READ_CALENDAR lets a calendar widget show your upcoming events. It is asked for only when you tap a calendar widget to connect it, or tap Allow beside it in the app's Settings, under About and Permissions; until then the widget shows made-up sample events. Your events are read on the device to draw the widget and never leave it.</p>
+
+  <h3>Notifications and music (notification dots, notification and music widgets)</h3>
+  <p>Showing a dot on the icons of apps that have notifications waiting, counting those notifications, and showing what is playing all need the launcher to be allowed as a notification listener. You switch this on yourself in Android's settings: from the app's Notification dots settings, from Permissions under About, or by tapping a notification or music widget to connect it. The launcher uses this to read which apps have notifications and how many, and the title, artist, album and cover of what is playing. It does not read what your notifications say. Nothing it reads leaves the device.</p>
+
+  <h3>Your location (weather widgets)</h3>
+  <p>ACCESS_COARSE_LOCATION lets a weather widget show the weather where you are. It is asked for only when you tap a weather widget set to this phone's location to connect it, or tap Allow beside it in the app's Settings, under About and Permissions, and a widget set to a town you choose needs no location at all. The location is approximate and rounded to about a kilometre before it is used; see the Weather section for where it is sent.</p>
+
+  <h3>Setting your wallpaper</h3>
+  <p>SET_WALLPAPER lets the app apply a wallpaper you have chosen. It is used for nothing else.</p>
+
+  <h3>Uninstalling apps</h3>
+  <p>REQUEST_DELETE_PACKAGES lets the app ask Android to uninstall an app when you choose to remove one from your home screen. Android shows its own confirmation, and the app cannot remove anything without it.</p>
+
+  <h2>Morph Premium and Google Play</h2>
+  <p>Morph Premium is an optional subscription, sold and managed entirely by Google Play. To show its prices and to check whether you are subscribed, the app asks the Google Play app on your device.</p>
+  <ul>
+    <li><strong>Your payment.</strong> Google processes it. The app never sees your payment details, name or email address.</li>
+    <li><strong>What we receive.</strong> Whether you hold the subscription, and the order details Google Play provides to every developer, such as an order number, the plan, the price, the date and the country. We use them only to handle purchases, refunds and tax records.</li>
+    <li><strong>Google's billing library.</strong> The app includes Google Play Billing Library, which sends diagnostic information about purchases to Google. This is why the app declares the INTERNET permission; the launcher's own code sends nothing. Google's use of it is governed by Google's privacy policy.</li>
+    <li><strong>Canceling.</strong> You can cancel at any time in Google Play's subscription settings.</li>
+  </ul>
+
+  <h2>Weather forecasts from MET Norway</h2>
+  <p>Weather widgets get their forecasts from MET Norway, the Norwegian Meteorological Institute, straight from your device. We never receive the request or the answer.</p>
+  <ul>
+    <li><strong>What is sent.</strong> The place's latitude and longitude, rounded to about a kilometre, and the app's name and version, which MET Norway's terms require. As with any internet request, your device's IP address reaches their servers. No account, identifier or anything else about you is sent.</li>
+    <li><strong>How often.</strong> Only while a weather widget is on screen, and no more often than the forecast changes, usually about once every half hour. Each answer is kept on the device until it expires.</li>
+    <li><strong>Finding a place by name.</strong> Searching for a town, and naming the town where you are, uses your phone's own geocoding service (on most phones Google's, under Google's privacy policy), which receives what you type, or the rounded location.</li>
+    <li><strong>Their terms.</strong> MET Norway's own privacy terms govern what their servers keep. The forecasts are theirs, used under the Creative Commons Attribution 4.0 licence.</li>
+  </ul>
+
+  <h2>Sharing a design</h2>
+  <p>You can share an icon look, a wallpaper or a widget you made. The share is made on your device and holds only the design's recipe: its settings, shapes, colors and any text you typed into it. Pictures you added are removed first, and so are a widget's taps that open a shortcut, which can carry a contact's name. Before anything is sent, the app shows you exactly what the share holds.</p>
+  <ul>
+    <li><strong>How it travels.</strong> As a link, sent by the app you choose from Android's share menu, or copied for you to paste where you like. It never passes through us.</li>
+    <li><strong>The link's page.</strong> A share link points to a page on inkspire-studio.github.io, hosted by GitHub. The design is in the part of the link after the "#", which a browser never sends to a server, so GitHub receives a request for the page, with your IP address as any web request has, and nothing of the design. The page only offers to open the link in the app.</li>
+    <li><strong>Opening a share.</strong> A design you receive is drawn on your device, and nothing of it is kept until you choose to keep it. The app reads your clipboard only when you tap Paste a shared link.</li>
+  </ul>
+
+  <h2>Two more things handled by others, not by us</h2>
+  <ul>
+    <li><strong>Widgets.</strong> The launcher can host widgets belonging to other apps. Those widgets are the other app's code, running under that app's own privacy policy — not this one.</li>
+    <li><strong>Android's own backup.</strong> If device backup is enabled in your Android settings, the app's settings and layout may be included in your device's backup to your own Google account. That backup is performed and controlled by Android and Google, not by this app, and is governed by Google's privacy policy. You can exclude it by turning device backup off in your Android settings.</li>
+  </ul>
+
+  <h2>Data we collect</h2>
+  <p>None, beyond the order details Google Play provides if you subscribe (see Morph Premium above). There is no server, no account, no identifier and no telemetry of our own. The weather request goes from your device to MET Norway and never through us. Nothing is shared or sold.</p>
+
+  <h2>Children</h2>
+  <p>The app is not directed at children and collects no personal information from anyone, of any age.</p>
+
+  <h2>Changes to this policy</h2>
+  <p>If the app ever gains a feature that changes any of the above, this policy will be updated and its effective date changed before that version is released.</p>
+
+  <h2>Contact</h2>
+  <p>Questions about this policy: <a href="mailto:inkspirestudio.support@gmail.com">inkspirestudio.support@gmail.com</a></p>
+
+  <footer>Morph Launcher · Last updated 16 October 2026</footer>
+</main>
+</body>
+</html>
