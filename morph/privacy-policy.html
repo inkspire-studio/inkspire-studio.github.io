@@ -95,13 +95,13 @@
 
   <header>
     <h1>Privacy Policy — Morph Launcher</h1>
-    <p class="meta">Package <span class="pkg">inkspire.morph.launcher</span> · Effective 23 October 2026</p>
+    <p class="meta">Package <span class="pkg">inkspire.morph.launcher</span> · Effective 8 November 2026</p>
   </header>
 
   <div class="lede">
-    <p>Morph Launcher collects nothing about you. It has no account, no server, no ads, no analytics and no crash reporting. Two things involve another company: Morph Premium, the optional subscription, which Google Play handles; and weather widgets, which ask MET Norway for a forecast.</p>
+    <p>Morph Launcher collects nothing that says who you are. It has no account, no server of its own, no ads and no analytics. Three things involve another company: crash reports, which Google's Firebase Crashlytics receives and you can turn off; Morph Premium, the optional subscription, which Google Play handles; and weather widgets, which ask MET Norway for a forecast.</p>
   </div>
-  <p>Everything below describes what the app reads on your device, and why. None of it leaves your device, apart from what the Morph Premium and Weather sections describe.</p>
+  <p>Everything below describes what the app reads on your device, and why. None of it leaves your device, apart from what the Crash reports, Morph Premium and Weather sections describe.</p>
 
   <h2>What the app accesses on your device</h2>
 
@@ -135,12 +135,21 @@
   <h3>Uninstalling apps</h3>
   <p>REQUEST_DELETE_PACKAGES lets the app ask Android to uninstall an app when you choose to remove one from your home screen. Android shows its own confirmation, and the app cannot remove anything without it.</p>
 
+  <h2>Crash reports</h2>
+  <p>When the app stops working, or hits an error it recovers from, it sends a report of what went wrong to Firebase Crashlytics, a Google service, so the fault can be found and fixed. Reports are on until you turn them off.</p>
+  <ul>
+    <li><strong>What a report holds.</strong> Where in the app's code the fault happened, the app's version, your device's model, Android version and free memory and storage, the time, and a random identifier Firebase creates for this installation. A report can also hold the app's own notes from just before the fault, which may name an app or widget involved, such as one that failed to open.</li>
+    <li><strong>What it never holds.</strong> Your name, accounts, contacts, messages, photos, what you type, your location or what you do in other apps.</li>
+    <li><strong>Who sees it.</strong> Only the developer, in Firebase's console. Google stores reports for 90 days and uses them under Firebase's terms and Google's privacy policy. Your device's IP address reaches Google, as with any internet request.</li>
+    <li><strong>Turning it off.</strong> Switch off Send crash reports in the app's Settings, under About. Reports not yet sent are then deleted, and nothing more is sent until you switch it back on.</li>
+  </ul>
+
   <h2>Morph Premium and Google Play</h2>
   <p>Morph Premium is an optional subscription, sold and managed entirely by Google Play. To show its prices and to check whether you are subscribed, the app asks the Google Play app on your device.</p>
   <ul>
     <li><strong>Your payment.</strong> Google processes it. The app never sees your payment details, name or email address.</li>
     <li><strong>What we receive.</strong> Whether you hold the subscription, and the order details Google Play provides to every developer, such as an order number, the plan, the price, the date and the country. We use them only to handle purchases, refunds and tax records.</li>
-    <li><strong>Google's billing library.</strong> The app includes Google Play Billing Library, which sends diagnostic information about purchases to Google. This is why the app declares the INTERNET permission; the launcher's own code sends nothing. Google's use of it is governed by Google's privacy policy.</li>
+    <li><strong>Google's billing library.</strong> The app includes Google Play Billing Library, which sends diagnostic information about purchases to Google. Google's use of it is governed by Google's privacy policy.</li>
     <li><strong>Canceling.</strong> You can cancel at any time in Google Play's subscription settings.</li>
   </ul>
 
@@ -168,10 +177,10 @@
   </ul>
 
   <h2>Data we collect</h2>
-  <p>None, beyond the order details Google Play provides if you subscribe (see Morph Premium above). There is no server, no account, no identifier and no telemetry of our own. The weather request goes from your device to MET Norway and never through us. Nothing is shared or sold.</p>
+  <p>None, beyond crash reports while you allow them (see Crash reports above) and the order details Google Play provides if you subscribe (see Morph Premium above). There is no server, no account and no analytics of our own. The weather request goes from your device to MET Norway and never through us. Nothing is shared or sold.</p>
 
   <h2>Children</h2>
-  <p>The app is not directed at children and collects no personal information from anyone, of any age.</p>
+  <p>The app is not directed at children and collects no personal information from anyone, of any age. Crash reports hold no name, account or contact details, and can be turned off.</p>
 
   <h2>Changes to this policy</h2>
   <p>If the app ever gains a feature that changes any of the above, this policy will be updated and its effective date changed before that version is released.</p>
@@ -179,7 +188,7 @@
   <h2>Contact</h2>
   <p>Questions about this policy: <a href="mailto:inkspirestudio.support@gmail.com">inkspirestudio.support@gmail.com</a></p>
 
-  <footer>Morph Launcher · Last updated 23 October 2026</footer>
+  <footer>Morph Launcher · Last updated 8 November 2026</footer>
 </main>
 </body>
 </html>
