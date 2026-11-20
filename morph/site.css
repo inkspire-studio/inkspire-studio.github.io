@@ -149,6 +149,8 @@ p { text-wrap: pretty; }
 /* Small cards */
 
 .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); gap: 1rem; }
+.cards.pairs { grid-template-columns: repeat(2, 1fr); }
+@media (max-width: 700px) { .cards.pairs { grid-template-columns: 1fr; } }
 .card {
   background: var(--card); border: 1px solid var(--rule); border-radius: 1.1rem;
   padding: 1.4rem 1.5rem;
