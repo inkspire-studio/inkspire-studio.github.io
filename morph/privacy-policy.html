@@ -95,7 +95,7 @@
 
   <header>
     <h1>Privacy Policy — Morph Launcher</h1>
-    <p class="meta">Package <span class="pkg">inkspire.morph.launcher</span> · Effective 17 November 2026</p>
+    <p class="meta">Package <span class="pkg">inkspire.morph.launcher</span> · Effective 20 November 2026</p>
   </header>
 
   <div class="lede">
@@ -133,7 +133,10 @@
   <p>The lists of apps you hide and apps you lock are kept on the device and never leave it. A theme profile file you share leaves hidden apps out. When you open a locked or hidden app from the launcher, Android's own prompt asks for your fingerprint, face, PIN, pattern or password. Android checks it; the launcher never sees it and stores nothing about it.</p>
 
   <h3>Accessibility services (Morph gestures, Morph app lock)</h3>
-  <p>The launcher has two accessibility services, each off until you switch it on in Android's accessibility settings. Morph gestures performs the home screen gestures you choose (opening notifications or quick settings, turning the screen off) and reads nothing on your screen. Morph app lock is told the name of each app as it opens, while Lock apps opened from anywhere is on in App privacy, so the launcher can ask for your lock before a locked or hidden app shows; it reads nothing on your screen either. That name is used at that moment and is never kept or sent anywhere.</p>
+  <p>The launcher has two accessibility services, each off until you switch it on in Android's accessibility settings. Morph gestures performs the home screen gestures you choose (opening notifications or quick settings, turning the screen off) and reads nothing on your screen. Morph app lock is told the name of each app as it opens, so the launcher can ask for your lock before a locked or hidden app shows, while Lock apps opened from anywhere is on in App privacy, and can hold the apps a focus session blocks. While a focus session blocks your phone (Block phone), it also covers other apps with the focus screen, closes the notification panel when it is pulled down, and is told which windows are open, so it can uncover the apps you allow. It steps aside while a call rings or is in progress, which it tells from the phone's audio mode. It reads nothing on your screen either. The name of an app is used at that moment and is never kept or sent anywhere.</p>
+
+  <h3>Focus and Do Not Disturb (ACCESS_NOTIFICATION_POLICY)</h3>
+  <p>The apps you choose in Focus, its schedules and the session under way are kept in the app's private storage on the device and never leave it. No record of past sessions is kept. Opening an app a session holds, or ending a session early, asks for your lock through Android's own prompt, as App privacy does. If you choose Do Not Disturb in Focus, you allow it once in Android's settings, and ACCESS_NOTIFICATION_POLICY then lets the launcher turn Do Not Disturb on when a session starts and off again when it ends, leaving it alone if you had turned it on yourself or changed it during the session. It changes nothing else, and your own Do Not Disturb settings still decide which calls and messages come through.</p>
 
   <h3>Time spent in apps (PACKAGE_USAGE_STATS)</h3>
   <p>If you track an app in Time in apps and allow usage access, the launcher reads from Android how long the apps you track were open today. It keeps only today's totals, in memory, and never stores them or sends them anywhere. It reads nothing for apps you don't track.</p>
@@ -207,7 +210,7 @@
   <h2>Contact</h2>
   <p>Questions about this policy: <a href="mailto:inkspirestudio.support@gmail.com">inkspirestudio.support@gmail.com</a></p>
 
-  <footer>Morph Launcher · Last updated 17 November 2026</footer>
+  <footer>Morph Launcher · Last updated 20 November 2026</footer>
 </main>
 </body>
 </html>
